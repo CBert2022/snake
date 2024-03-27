@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: "Press Start 2P", system-ui;
+            background-color: lightslategrey;
+        }
+
+        canvas {
+            border: 10px solid darkgrey;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: darkgrey;
+            font-size: 10px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 40px;
+
+        }
+
+        #score {
+            margin: 20px 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Snake</h1>
+        <div id="score">Score: 0</div>
+        <!-- <div id="highScore">Highscore: </div> -->
+        <canvas id="can"></canvas>
+        <div>
+            <a href="https://www.flaticon.com/free-icons/weather" title="weather icons">
+                Apple icon created by iconixar - Flaticon
+            </a>
+        </div>
+    </div>
+
+    <script src="./js/apfel.js"></script>
+    <script src="./js/schlange.js"></script>
+    <script src="./js/spielfeld.js"></script>
+    <script>
+        "use strict";
+
+        let felderAnzahl;
+
+        if (window.innerWidth < 768) {
+            felderAnzahl = 9; // Anzahl der Felder für Mobilgeräte
+        } else {
+            felderAnzahl = 15; // Anzahl der Felder für Desktop
+        }
+
+        let spfl = new Spielfeld("can", felderAnzahl, 40);
+
+    </script>
+</body>
+
+</html>
